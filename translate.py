@@ -1,12 +1,12 @@
 try:
-    import getdtext, os
+    import gettext, os
 except:
     print("\a\033[1;91merror\033[0;1m: Gettext (localization module) not found.")
-    print("\a\033[1;96minfo\033[0;1m: Exit code: 1")
+    print("\a\033[1;96minfo\033[0;1m: Exit code: 1\033[0m")
     exit(1)
 
 envkey = 'LANG'
-lang = os.getenv(key)
+lang = os.getenv(envkey)
 if 'tr' in lang:
     tr = gettext.translation('base', localedir='locales', languages=['tr'])
     tr.install()
